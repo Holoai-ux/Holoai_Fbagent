@@ -1,7 +1,7 @@
-Optimist Prime Facebook Messenger Bot
+Holoai_Fbagent Facebook Messenger Bot
 ======
 
-Optimist Prime is a Facebook Messenger Bot that supports Voice Recognition, Natural Language Processing and features such as: search nearby restaurants, search trending news, transcribe and save memos to the cloud. It also save user data (with permissions, of course) such as favorite locations, can provide customized greetings (acknowledging user's time in any time zone, i.e. Good morning/Good evening) and entertaining responses, etc.
+Holoai_Fbagent is a Facebook Messenger Bot that supports Voice Recognition, Natural Language Processing and features such as: search nearby restaurants, search trending news, transcribe and save memos to the cloud. It also save user data (with permissions, of course) such as favorite locations, can provide customized greetings (acknowledging user's time in any time zone, i.e. Good morning/Good evening) and entertaining responses, etc.
 
 (For a simpler "echo bot" proof-of-concept implementation of the Facebook Messenger Bot, check out [this simplified project](https://github.com/hungtraan/FacebookBot-echobot-simple) with [a 10-minute tutorial](https://cli.traan.vn/how-to-create-a-facebook-bot-in-10-minutes-the-complete-tutorial-from-zero-to-hero-ku-352dca274046))
 
@@ -38,17 +38,17 @@ Optimist Prime is a Facebook Messenger Bot that supports Voice Recognition, Natu
 - Conversational chit-chat
 
 #### Screenshots:
-![Optimist Prime Screenshots](https://monosnap.com/file/gCXyTugWB6IRdGScJBzHLuL9Vz9lMt.png)
+![Holoai_Fbagent Screenshots](https://monosnap.com/file/gCXyTugWB6IRdGScJBzHLuL9Vz9lMt.png)
 **[Demo](https://www.facebook.com/optimistPrimeBot/)** (click on Message to start chatting with it)
 
 
 ## Usage
 
-> Note: Optimist Prime is implemented with different APIs for features like user management, voice recognition, restaurant search, trending news search, so it takes some time to config & get it up and running. For a more basic "echo bot" that responses to you whatever you say to it, use **`facebook-echobot.py`**, or head over to Facebook's own Messenger app [Quick Start](https://developers.facebook.com/docs/messenger-platform/quickstart/). The echo bot is useful to get a quick glance of the fundamental ideas behind a Facebook Messenger Bot.
+> Note: Holoai_Fbagent is implemented with different APIs for features like user management, voice recognition, restaurant search, trending news search, so it takes some time to config & get it up and running. For a more basic "echo bot" that responses to you whatever you say to it, use **`facebook-echobot.py`**, or head over to Facebook's own Messenger app [Quick Start](https://developers.facebook.com/docs/messenger-platform/quickstart/). The echo bot is useful to get a quick glance of the fundamental ideas behind a Facebook Messenger Bot.
 
 #### Dependencies, Database and API keys
 
-In order to build your own bot with all features of Optimist Prime, you'll need a few set-ups:
+In order to build your own bot with all features of Holoai_Fbagent, you'll need a few set-ups:
 
 0. Install dependencies: `pip install -r requirements.txt` (preferably getting into your virtual environment `virtualenv`/`venv` - read all about `pip` and `venv` [here](https://packaging.python.org/installing/))
 1. [Create a Facebook Page](https://www.facebook.com/pages/create/): A bare-bone Page to "assign" the Bot to will do. The Bot will actually be this page, i.e. you'll be "talking" to the page
@@ -84,7 +84,7 @@ Get the `https` URL (Facebook requires `https` secured webhooks) and subscribe y
 
 ##### Deploying to the cloud
 
-I've provided the Procfile for deployment on **Heroku**. You can create a Heroku app, spin up a free dyno and deploy your own Optimist Prime with [this tutorial](https://devcenter.heroku.com/articles/getting-started-with-python#introduction).
+I've provided the Procfile for deployment on **Heroku**. You can create a Heroku app, spin up a free dyno and deploy your own Holoai_Fbagent with [this tutorial](https://devcenter.heroku.com/articles/getting-started-with-python#introduction).
 
 For the voice recognition to work, we'll need to include `ffmpeg` on our Heroku dyno, which could be done by adding a Heroku Buildpack to your app's Settings tab on Dashboard:
 `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
@@ -106,7 +106,7 @@ git commit -am "Awesome commit"
 git push heroku master
 ```
 
-**Amazon Web Service**: I'm a fan of AWS and have had great experience with Beanstalk. However, if you want to use AWS, you'll need to go the extra mile of obtaining an SSL cert to have a secured webhook. For the purposes of Optimist Prime, I decided to go with Heroku instead, since it readily provides a `https` connections.
+**Amazon Web Service**: I'm a fan of AWS and have had great experience with Beanstalk. However, if you want to use AWS, you'll need to go the extra mile of obtaining an SSL cert to have a secured webhook. For the purposes of Holoai_Fbagent, I decided to go with Heroku instead, since it readily provides a `https` connections.
 
 
 ## Voice Recognition
@@ -157,10 +157,10 @@ Example commands:
 		find me a brewery near downtown san francisco.
 ```
 
-After receiving the command, Optimist Prime would ask for your location. You can input either a text/voice-based **location name** or send your **exact GPS location** (with Facebook Messenger on mobile devices). The Yelp Search API requires a coordinate for exact location search, so the reverse lookup from location-name to coordinate is handled by the the geocoding capability of the Geopy library. An alternative (probably more updated and smarter with complex names) would be [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro). Optimist Prime currently uses `Geopy`. Optimist Prime also offers to save your location for future reference.
+After receiving the command, Holoai_Fbagent would ask for your location. You can input either a text/voice-based **location name** or send your **exact GPS location** (with Facebook Messenger on mobile devices). The Yelp Search API requires a coordinate for exact location search, so the reverse lookup from location-name to coordinate is handled by the the geocoding capability of the Geopy library. An alternative (probably more updated and smarter with complex names) would be [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro). Holoai_Fbagent currently uses `Geopy`. Holoai_Fbagent also offers to save your location for future reference.
 ![Smart Location Search](https://monosnap.com/file/5ox1ff0xx1l6r2cjTD7o7Gcb8aqgKF.png)
 
-Optimist Prime leverage Yelp's API. Included in the code is both the APIv2 (stable) and APIv3 (developer preview). Both require you to acquire their API key.
+Holoai_Fbagent leverage Yelp's API. Included in the code is both the APIv2 (stable) and APIv3 (developer preview). Both require you to acquire their API key.
 
 [Get API key for v2](https://www.yelp.com/developers/manage_api_keys)
 
@@ -186,7 +186,7 @@ Example commands:
 ```
 ![News Search](https://monosnap.com/file/wTn8lqcV1mgryNs5bMEG2LFcCQb1ff.png)
 
-The Trending News Search leverages [Webhose.io API](https://webhose.io/SDK). The service crawls the web for news along with its social strength (Facebook likes, Shares, Twitter posts). In case of user searching for not-so-trending or niche topics, Optimist Prime lowers its "trending" criteria as well as search time frame to get the best results.
+The Trending News Search leverages [Webhose.io API](https://webhose.io/SDK). The service crawls the web for news along with its social strength (Facebook likes, Shares, Twitter posts). In case of user searching for not-so-trending or niche topics, Holoai_Fbagent lowers its "trending" criteria as well as search time frame to get the best results.
 
 ### 3. Memo
 
@@ -194,7 +194,7 @@ Example commands:
 ```
 	memorize this for me: [continue speaking your memo]
 	memorize this: [continue speaking your memo]
-	memorize this (stop talking, Optimist Prime will prompt you to start your memo)
+	memorize this (stop talking, Holoai_Fbagent will prompt you to start your memo)
 	can you memorize this for me?
 ```
 ![Memo](https://monosnap.com/file/cYHCLLXhdSTPeQi0qtTl3dhF7S209k.png)
@@ -336,7 +336,7 @@ There are also other useful types of message (also implemented in this bot), inc
 
 #### The nitty-gritty detail of implementing voice recognition & scalability
 
-The catch for processing voice messages from the Facebook Messenger API is **converting Facebook's compressed mp3 to a valid input format** for the Speech-to-Text API. Both IBM and Google do not support mp3, and their input format include principle audio formats like WAV, FLAC, OGG, etc. Therefore, Optimist Prime actually has to download the mp3 audio, convert it to WAV, and upload it to the Speech API, which is a round trip that significantly increases response time for each audio command. In this project, I used `ffmpeg` and call it with Python's `subprocess` to convert the audio.
+The catch for processing voice messages from the Facebook Messenger API is **converting Facebook's compressed mp3 to a valid input format** for the Speech-to-Text API. Both IBM and Google do not support mp3, and their input format include principle audio formats like WAV, FLAC, OGG, etc. Therefore, Holoai_Fbagent actually has to download the mp3 audio, convert it to WAV, and upload it to the Speech API, which is a round trip that significantly increases response time for each audio command. In this project, I used `ffmpeg` and call it with Python's `subprocess` to convert the audio.
 
 > `subprocess` is a Python tool that allows you to trigger command line-like commands, so what the program does is equivalent to it calling another program "by typing this command into the command line"
 
